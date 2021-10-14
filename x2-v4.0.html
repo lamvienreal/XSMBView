@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bảng thống kê tần xuất xuất hiện xiên 2</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <style>
+        .text-loterry {
+            font-weight: bold;
+        }
+
+        .text-true {
+            background-color: green;
+        }
+
+        .text-fail {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <!--for demo wrap-->
+        <h1>BẢNG THỐNG KÊ DỰ ĐOÁN 35 XIÊN 2 THEO NGÀY</h1>
+
+        <h4>
+            Mỗi ngày có 35 xiên 2 sau khi thống kê cho xác xuất xuất hiện cao, được dự đoán trước giờ quay thưởng.<br />
+            Số hiệu: <span id="numbercode"></span>
+            <br />
+            Ghi chú: Tổ hợp chập 2 của 7 hay 2 lô tô cùng đồng thời xuất hiện gọi là Xiên 2.
+            Lô tô là 2 chữ số cuối của mỗi giải quay thưởng.
+            <br />
+            - Màu xanh lá cây: Tổ hợp 2 cùng xuất hiện.
+            <br />
+            - Màu đỏ: Tổ hợp 2 không cùng xuất hiện hoặc không xuất hiện.
+        </h4>
+        <h4 style="color:red;">
+            Cảnh báo rủi ro: Dự đoán khả năng xuất hiện trong tương lai là không chắc chắn sẽ đúng 100%,
+            dữ liệu trên bảng này chỉ mang tính chất tham khảo. Người xem tự chịu trách nhiệm với quyết định của mình.
+            Hãy cẩn thận trên mọi quyết định của bạn.
+        </h4>
+        <h4 style="color:yellow;">
+            Tuyên bố miễn trừ trách nhiệm: Chúng tôi chỉ làm xác xuất thống kê tìm ra xác xuất cao nhất có thể
+            và không chịu trách nhiệm với rủi ro kể trên.
+        </h4>
+        <h4 style="color:green;">
+            Lời khuyên: Chia nhỏ và dài hạn sẽ thu được kết quả.
+            <br />
+            Chơi khi biểu đồ cho thấy đang ở đáy và không thể đi xuống được nữa
+            đều tay cho đến khi nào chạm đỉnh.
+            Dừng khi biểu đồ cho thấy đang xổ dốc.
+        </h4>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Phân tích và Thống kê từ Robot <span id="table-tile"></span> <input type="number" id="table-id" value="0" min="0" max="90" /></h3>
+                <div class="tbl-header">
+                    <table class="itable" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Ngày</th>
+                                <th class="text-center">X2_1</th>
+                                <th class="text-center">X2_2</th>
+                                <th class="text-center">X2_3</th>
+                                <th class="text-center">X2_4</th>
+                                <th class="text-center">X2_5</th>
+                                <th class="text-center">X2_6</th>
+                                <th class="text-center">X2_7</th>
+                                <th class="text-center">X2_8</th>
+                                <th class="text-center">X2_9</th>
+                                <th class="text-center">X2_10</th>
+                                <th class="text-center">Nghiệm thu</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table class="itable" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="ctx" style="display:none;" class="col-lg-6">
+                <h3>Lời/lỗ hàng tháng lũy tiến</h3>
+                <canvas style="background-color:white;" id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <div class="row" style="display:none;">
+            <div id="ctx1" class="col-lg-12">
+                <h3>Lịch sử gia tăng lợi nhuận</h3>
+                <canvas style="background-color:white;" id="myChart1" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx2" class="col-lg-12">
+                <h3>Kế hoạch đầu tư với vốn tối thiểu 20 triệu (độ an toàn cho vốn 90%)</h3>
+                <canvas style="background-color:white;" id="myChart2" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx3" class="col-lg-12">
+                <h3>Rủi ro cao nhất từng tháng pp lũy tiến</h3>
+                <canvas style="background-color:white;" id="myChart3" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div id="ctx4" class="col-lg-12">
+                <h3>Đồ thị tuyến tính</h3>
+                <canvas style="background-color:white;" id="myChart4" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx5" class="col-lg-12">
+                <h3>Lời/Lỗ tuyến tính hàng tháng</h3>
+                <canvas style="background-color:white;" id="myChart5" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx7" class="col-lg-12">
+                <h3>Doanh thu tuyến tính hàng tháng</h3>
+                <canvas style="background-color:white;" id="myChart7" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx6" class="col-lg-12">
+                <h3>Rủi ro cao nhất từng tháng pp tuyến tính</h3>
+                <canvas style="background-color:white;" id="myChart6" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+    </section>
+    <section>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+            integrity="sha512-vBmx0N/uQOXznm/Nbkp7h0P1RfLSj0HQrFSzV8m7rOGyj30fYAOKHYvCNez+yM8IrfnW0TCodDEjRqf6fodf/Q=="
+            crossorigin="anonymous"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/x2-v4.0.js"></script>
+</body>
+</html>

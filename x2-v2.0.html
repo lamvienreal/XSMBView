@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bảng thống kê tần xuất xuất hiện xiên 2</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <style>
+        .text-loterry {
+            font-weight: bold;
+        }
+
+        .text-true {
+            background-color: green;
+        }
+
+        .text-fail {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <!--for demo wrap-->
+        <h1>BẢNG THỐNG KÊ XIÊN 2</h1>
+        <h4>
+            Chiến thuật: <br />
+            Hằng ngày đều có 10 xiên được tạo ra. Mỗi Xiên đều đánh chung điểm, tối thiểu 10đ. Tỉ lệ 1<br />
+        </h4>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Phân tích và Thống kê từ Robot <span id="table-tile"></span> <input type="number" id="table-id" value="0" min="0" max="90" /></h3>
+                <div class="tbl-header">
+                    <table class="itable" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Ngày</th>
+                                <th class="text-center">X2_1</th>
+                                <th class="text-center">X2_2</th>
+                                <th class="text-center">X2_3</th>
+                                <th class="text-center">X2_4</th>
+                                <th class="text-center">X2_5</th>
+                                <th class="text-center">X2_6</th>
+                                <th class="text-center">X2_7</th>
+                                <th class="text-center">X2_8</th>
+                                <th class="text-center">X2_9</th>
+                                <th class="text-center">X2_10</th>
+                                <th class="text-center">Nghiệm thu</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table class="itable" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="ctx" style="display:none;" class="col-lg-6">
+                <h3>Lời/lỗ hàng tháng lũy tiến</h3>
+                <canvas style="background-color:white;" id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <div class="row" style="display:none;">
+            <div id="ctx1" class="col-lg-12">
+                <h3>Lịch sử gia tăng lợi nhuận</h3>
+                <canvas style="background-color:white;" id="myChart1" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx2" class="col-lg-12">
+                <h3>Kế hoạch đầu tư với vốn tối thiểu 20 triệu (độ an toàn cho vốn 90%)</h3>
+                <canvas style="background-color:white;" id="myChart2" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx3" class="col-lg-12">
+                <h3>Rủi ro cao nhất từng tháng pp lũy tiến</h3>
+                <canvas style="background-color:white;" id="myChart3" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div id="ctx4" class="col-lg-12">
+                <h3>Đồ thị tuyến tính</h3>
+                <canvas style="background-color:white;" id="myChart4" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx5" class="col-lg-12">
+                <h3>Lời/Lỗ tuyến tính hàng tháng</h3>
+                <canvas style="background-color:white;" id="myChart5" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx7" class="col-lg-12">
+                <h3>Doanh thu tuyến tính hàng tháng</h3>
+                <canvas style="background-color:white;" id="myChart7" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx6" class="col-lg-12">
+                <h3>Rủi ro cao nhất từng tháng pp tuyến tính</h3>
+                <canvas style="background-color:white;" id="myChart6" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+    </section>
+    <section>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+            integrity="sha512-vBmx0N/uQOXznm/Nbkp7h0P1RfLSj0HQrFSzV8m7rOGyj30fYAOKHYvCNez+yM8IrfnW0TCodDEjRqf6fodf/Q=="
+            crossorigin="anonymous"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/x2-v2.0.js"></script>
+</body>
+</html>

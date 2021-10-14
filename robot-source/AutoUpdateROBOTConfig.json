@@ -1,0 +1,14 @@
+{
+  "version": "1.5.1.0",
+  "url": "https://github.com/bienhuynh/XSMBView/raw/main/robot-source/ROBOTXSMB-V1.5.1.zip",
+  "changelog": "https://github.com/ravibpatel/AutoUpdater.NET/releases",
+  "mandatory": {
+    "value": true,
+    "minVersion": "1.0.0.0",
+    "mode": 1
+  },
+  "checksum": {
+    "value": "ef4ed5e52a9abeb1232642eff5863134f2d72b0d",
+    "hashingAlgorithm": "SHA1"
+  }
+}

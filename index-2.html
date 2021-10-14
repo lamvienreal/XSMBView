@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Kết quả dự đoán</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <style>
+        .text-loterry {
+            font-weight: bold;
+        }
+
+        .text-true {
+            background-color: green;
+        }
+
+        .text-fail {
+            background-color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" 
+          integrity="sha512-SUJFImtiT87gVCOXl3aGC00zfDl6ggYAw5+oheJvRJ8KBXZrr/TMISSdVJ5bBarbQDRC2pR5Kto3xTR0kpZInA==" 
+          crossorigin="anonymous" />
+</head>
+<body>
+    <section>
+        <div class="row">
+            <!--for demo wrap-->
+            <h1>BẢNG THỐNG KÊ KẾT QUẢ PHÂN TÍCH KHẢ NĂNG XUẤT HIỆN LÔ MB</h1>
+            <div class="tbl-header">
+                <table class="itable" cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Ngày dự đoán</th>
+                            <th class="text-center">Gold Point</th>
+                            <th class="text-center">TOP 1</th>
+                            <th class="text-center">TOP 2</th>
+                            <th class="text-center">TOP 3</th>
+                            <th class="text-center">TOP 4</th>
+                            <th class="text-center">TOP 5</th>
+                            <th class="text-center">TOP 6</th>
+                            <th class="text-center">TOP 7</th>
+                            <th class="text-center">Thời gian tạo</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table class="itable" cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <hr />
+            <div id="ctx1" class="col-lg-12">
+                <h3>Đồ thị tuyến tính top 1</h3>
+                <canvas style="background-color:white;" id="myChart1" width="400" height="400"></canvas>
+            </div>
+            <hr />
+            <div id="ctx2" class="col-lg-12">
+                <h3>Đồ thị tuyến tính top 2</h3>
+                <canvas style="background-color:white;" id="myChart2" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx2_1" class="col-lg-12">
+                <h3>Doanh thu tuyến tính X2 top 2</h3>
+                <canvas style="background-color:white;" id="myChart2_1" width="400" height="400"></canvas>
+            </div>
+            <hr />
+            <div id="ctx3" class="col-lg-12">
+                <h3>Đồ thị tuyến tính top 3</h3>
+                <canvas style="background-color:white;" id="myChart3" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx4" class="col-lg-12">
+                <h3>Đồ thị tuyến tính top 4</h3>
+                <canvas style="background-color:white;" id="myChart4" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx5" class="col-lg-12">
+                <h3>Đồ thị tuyến tính top 5</h3>
+                <canvas style="background-color:white;" id="myChart5" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx6" class="col-lg-12">
+                <h3>Đồ thị tuyến tính top 6</h3>
+                <canvas style="background-color:white;" id="myChart6" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx7" class="col-lg-12">
+                <h3>Đồ thị tuyến tính top 7</h3>
+                <canvas style="background-color:white;" id="myChart7" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div id="ctx8" class="col-lg-12">
+                <h3>Đồ thị tuyến tính PP X2 TOP3</h3>
+                <canvas style="background-color:white;" id="myChart8" width="400" height="400"></canvas>
+            </div>
+            <div id="ctx8_1" class="col-lg-12">
+                <h3>Doanh thu tuyến tính PP X2 TOP3 theo tháng</h3>
+                <canvas style="background-color:white;" id="myChart8_1" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+            integrity="sha512-vBmx0N/uQOXznm/Nbkp7h0P1RfLSj0HQrFSzV8m7rOGyj30fYAOKHYvCNez+yM8IrfnW0TCodDEjRqf6fodf/Q=="
+            crossorigin="anonymous"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/load-data-table.js"></script>
+</body>
+</html>
